@@ -16,7 +16,7 @@ public class ArabicNum {
                     throw new Exception("Значения должны быть от 1(I) до 10(X)");
                 } catch (Exception e) {
                     System.err.println(e.getMessage());
-                    System.exit(0);
+                    System.exit(1);
                 }
             }
 
@@ -40,7 +40,7 @@ public class ArabicNum {
             }
         } catch (Exception e) {
             System.out.println("Что-то пошло не так.");
-            System.exit(0);
+            System.exit(1);
         }
     }
 }

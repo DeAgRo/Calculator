@@ -9,12 +9,7 @@ import java.util.TreeMap;
 public class RomanNum {
     private static final Map<String, Integer> romannum = new HashMap<>();
     private static final TreeMap<Integer, String> arabicnum = new TreeMap<>();
-
-    public static void calculate(String str) {
-        String first = str.split(" ")[0];
-        String second = str.split(" ")[2];
-        String operation = str.split(" ")[1];
-
+    static {
         romannum.put("I", 1);
         romannum.put("II", 2);
         romannum.put("III", 3);
@@ -35,13 +30,20 @@ public class RomanNum {
         arabicnum.put(5, "V");
         arabicnum.put(4, "IV");
         arabicnum.put(1, "I");
+    }
+
+    public static void calculate(String str) {
+        String first = str.split(" ")[0];
+        String second = str.split(" ")[2];
+        String operation = str.split(" ")[1];
+
 
         if (!romannum.containsKey(first) || !romannum.containsKey(second)) {
             try {
                 throw new ArithmeticException("Числа ниже 1 и выше 10 не принимаются!");
             } catch (Exception e) {
                 System.err.println(e.getMessage());
-                System.exit(0);
+                System.exit(1);
             }
         }
 
@@ -56,7 +58,7 @@ public class RomanNum {
                             throw new Exception("Результат <= 1");
                         } catch (Exception e) {
                                 System.err.println(e.getMessage());
-                                System.exit(0);
+                                System.exit(1);
                             }
                         }
                         Operations subtraction = (a, b) -> a - b;
