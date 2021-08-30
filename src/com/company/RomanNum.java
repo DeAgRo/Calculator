@@ -50,7 +50,7 @@ public class RomanNum {
                 switch (operation) {
                     case ("+") -> {
                         Operations addition = Integer::sum;
-                        System.out.println(addition.calculate(romannum.get(first),romannum.get(second)));
+                        System.out.println(convert(addition.calculate(romannum.get(first),romannum.get(second))));
                     }
                     case ("-") -> {
                         if (romannum.get(first) <= romannum.get(second)) {
@@ -62,11 +62,11 @@ public class RomanNum {
                             }
                         }
                         Operations subtraction = (a, b) -> a - b;
-                        System.out.println(subtraction.calculate(romannum.get(first),romannum.get(second)));
+                        System.out.println(convert(subtraction.calculate(romannum.get(first),romannum.get(second))));
                     }
                     case ("*") -> {
                         Operations multiplication = (a, b) -> a * b;
-                        System.out.println(multiplication.calculate(romannum.get(first),romannum.get(second)));
+                        System.out.println(convert(multiplication.calculate(romannum.get(first),romannum.get(second))));
                     }
                     case ("/") -> {
                         Operations division = (a, b) -> a / b;
