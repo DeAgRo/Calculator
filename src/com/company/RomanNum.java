@@ -78,8 +78,6 @@ public class RomanNum {
     }
     private static String convert(int num){
         int a = arabicnum.floorKey(num);
-//        System.out.println("res is " + num);
-//        System.out.println("floorkey is " + a);
         if (num == a){
             return arabicnum.get(num);
         }
